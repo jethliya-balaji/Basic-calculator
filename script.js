@@ -7,8 +7,8 @@ var allOperators = document.querySelectorAll('[data-operators]');
 var equalToBtn = document.querySelector('#equalToBtn');
 
 clearAllBtn.addEventListener('click', () => {
-    previousOperand.textContent = ''
-    currentOperand.textContent = ''
+    previousOperand.textContent = '';
+    currentOperand.textContent = '';
 });
 
 deleteBtn.addEventListener('click', () => {
@@ -21,13 +21,13 @@ deleteBtn.addEventListener('click', () => {
         currentOperandInList.pop();
         currentOperand.textContent = currentOperandInList.join('');
     }
-})
+});
 
 allNumbers.forEach((number) => {
     number.addEventListener('click', () => {
         currentOperand.textContent += number.textContent
-    })
-})
+    });
+});
 
 allOperators.forEach((Operator) => {
     Operator.addEventListener('click', () => {
@@ -36,16 +36,16 @@ allOperators.forEach((Operator) => {
             previousOperand.textContent += currentOperand.textContent
             currentOperand.textContent = ''
         }
-    })
-})
+    });
+});
 
 equalToBtn.addEventListener('click', () => {
     var toSolve = `${previousOperand.textContent}${currentOperand.textContent}`
     previousOperand.textContent = ''
     if (toSolve.endsWith('÷') || toSolve.endsWith('×') || toSolve.endsWith('+') || toSolve.endsWith('-')) {
-        toSolve = toSolve.slice(0, -1)
+        toSolve = toSolve.slice(0, -1);
     }
-    toSolve = toSolve.replace('×', '*')
-    toSolve = toSolve.replace('÷', '/')
-    currentOperand.textContent = eval(toSolve)
-})
+    toSolve = toSolve.replace('×', '*');
+    toSolve = toSolve.replace('÷', '/');
+    currentOperand.textContent = eval(toSolve);
+});
