@@ -1,10 +1,10 @@
-var previousOperand = document.querySelector('.previous-operand');
-var currentOperand = document.querySelector('.current-operand');
-var clearAllBtn = document.querySelector('#clearBtn');
-var deleteBtn = document.querySelector('#deieteBtn');
-var allNumbers = document.querySelectorAll('[data-number]');
-var allOperators = document.querySelectorAll('[data-operators]');
-var equalToBtn = document.querySelector('#equalToBtn');
+let previousOperand = document.querySelector('.previous-operand');
+let currentOperand = document.querySelector('.current-operand');
+let clearAllBtn = document.querySelector('#clearBtn');
+let deleteBtn = document.querySelector('#deieteBtn');
+let allNumbers = document.querySelectorAll('[data-number]');
+let allOperators = document.querySelectorAll('[data-operators]');
+let equalToBtn = document.querySelector('#equalToBtn');
 
 clearAllBtn.addEventListener('click', () => {
     previousOperand.textContent = '';
@@ -40,7 +40,7 @@ allOperators.forEach((Operator) => {
 });
 
 equalToBtn.addEventListener('click', () => {
-    var toSolve = `${previousOperand.textContent}${currentOperand.textContent}`
+    let toSolve = `${previousOperand.textContent}${currentOperand.textContent}`
     previousOperand.textContent = ''
     if (toSolve.endsWith('÷') || toSolve.endsWith('×') || toSolve.endsWith('+') || toSolve.endsWith('-')) {
         toSolve = toSolve.slice(0, -1);
